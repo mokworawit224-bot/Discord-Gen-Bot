@@ -1,5 +1,8 @@
+import os
 import discord
 from discord.ext import commands
+
+from mysever import sever_on
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -106,4 +109,6 @@ async def panel(ctx):
 
     await ctx.send(embed=embed, view=ControlView())
 
-bot.run("MTQ4OTYwOTczNTcxNDg5ODA4Mg.G5Pi_F.oCtAXy5XldiEx8kep9QeBa_xr8bXMpOTXCnpa8")
+sever_on()
+
+bot.run(os.getenv("TOKEN"))      
